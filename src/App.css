@@ -1,0 +1,50 @@
+.header
+{
+  display: flex;
+  justify-content: space-between;
+  padding:40px;
+}
+
+.header_logo
+{
+    width:90px;
+    height:90px;
+}
+.header_user
+{
+    width:90px;
+    height:90px;
+}
+.wrapper_search
+{
+    align-self: center;
+    
+}
+
+.wrapper_search > input
+{
+        border: none;
+        background: transparent;
+        margin: 0;
+        padding: 7px 8px;
+        font-size: 14px;
+        color: inherit;
+        border: 1px solid grey;
+        border-radius: 5px;
+}
+
+input[type="search"]::placeholder {
+    color: #bbb;
+  }
+  
+  button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent 
+  }
+
