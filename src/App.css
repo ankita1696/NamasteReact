@@ -13,17 +13,21 @@
   height: 90px;
 }
 .wrapper_search {
-  align-self: center;
+  float: right;
+  margin-bottom: 40px;
+  margin-top: 90x;
+  margin-top: -6%;
+  margin-right: 80px;
 }
 .wrapper_logo {
   padding: 20px;
 }
 
-.wrapper_search > input {
+form > input {
   border: none;
   background: transparent;
   margin: 0;
-  padding: 7px 8px;
+  padding: 10px;
   font-size: 14px;
   color: inherit;
   border: 1px solid grey;
@@ -34,15 +38,9 @@ input[type="search"]::placeholder {
   color: #bbb;
 }
 
-button[type="submit"] {
-  text-indent: -999px;
-  overflow: hidden;
-  width: 40px;
-  padding: 0;
+button {
+  padding: 10px;
   margin: 0;
-  border: 1px solid transparent;
-  border-radius: inherit;
-  background: transparent;
 }
 
 .card {

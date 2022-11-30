@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "./../../asset/teamlogo.jpg";
 import { teamData } from "./teamData";
 import CardComponent from "./Card";
+import SearchBar from "../SearchBar";
 
 const TeamComponent = () => {
   return (
@@ -20,16 +21,22 @@ const TeamHeader = () => {
   );
 };
 
-const CardContainer = () => {
-  return teamData.map((team) => (
+const CardContainer = ({ filteredResult }) => {
+  return filteredResult.map((team) => (
     <CardComponent team={team} key={team.discord} />
   ));
 };
 
-const TeamBody = () => (
-  <div className="card-container">
-    <CardContainer />
-  </div>
-);
+const TeamBody = () => {
+  const [filteredResult, setFilteredResult] = useState(teamData);
+  return (
+    <>
+      <SearchBar setFilteredResult={setFilteredResult}></SearchBar>
+      <div className="card-container">
+        <CardContainer filteredResult={filteredResult} />
+      </div>
+    </>
+  );
+};
 
 export default TeamComponent;
