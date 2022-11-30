@@ -1,6 +1,6 @@
-import React from 'react'
-import logo from '../utility/logo.jpeg'
-import user from '../utility/user.png'
+import React from 'react';
+import logo from '../asset/logo.jpeg';
+import user from '../asset/user.png';
 
 const HeaderComponent = () =>
 {
