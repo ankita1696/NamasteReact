@@ -1,0 +1,25 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "",
+  
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankita1696/NamasteReact.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankita1696/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/ankita1696/NamasteReact#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
