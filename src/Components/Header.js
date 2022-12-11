@@ -6,7 +6,6 @@ const HeaderComponent = () => {
   return (
     <div className="header">
       <Logo></Logo>
-      <SearchBar></SearchBar>
       <User></User>
     </div>
   );

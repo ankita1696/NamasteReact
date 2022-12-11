@@ -1,14 +1,14 @@
 import React from "react";
 
-const CardComponent = ({ team }) => {
+const CardComponent = ({ team: {img,name,companyOrCollege,experienceOrSemester,location}}) => {
   return (
     <div id="card" className="card">
-      <img src={team.img} />
+      <img src={img} />
       <div className="data_container">
-        <h2>{team.name}</h2>
-        <h3>{team.companyOrCollege}</h3>
-        <h4>{team.experienceOrSemester}</h4>
-        <h5>{team.location}</h5>
+        <h2>{name}</h2>
+        <h3>{companyOrCollege}</h3>
+        <h4>{experienceOrSemester}</h4>
+        <h5>{location}</h5>
       </div>
     </div>
   );
