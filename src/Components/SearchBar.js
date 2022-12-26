@@ -1,26 +1,27 @@
 import React from "react";
 import { useState } from "react";
-import teamData from "./Team/teamData";
 
-const searchMember = (searchText) => {
+const searchMember = (searchText, teamData) => {
   // Logic for searching inside data
   return teamData.filter(
     (res) =>
-      res.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()) ||
-      res.companyOrCollege
-        .toLocaleLowerCase()
+      res?.login
+        ?.toLocaleLowerCase()
+        .includes(searchText.toLocaleLowerCase()) ||
+      res?.location
+        ?.toLocaleLowerCase()
         .includes(searchText.toLocaleLowerCase())
   );
 };
 
-const SearchBar = ({ setFilteredResult }) => {
+const SearchBar = ({ setFilteredResult, teamData }) => {
   const [searchText, setsearchText] = useState("");
   return (
     <div className="wrapper_search">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          const filteredResult = searchMember(searchText);
+          const filteredResult = searchMember(searchText, teamData);
           setFilteredResult(filteredResult);
         }}
       >

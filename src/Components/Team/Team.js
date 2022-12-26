@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "./../../asset/teamlogo.jpg";
-import { teamData } from "./teamData";
+import { Ids } from "../../Common/TeamConstants";
 import CardComponent from "./Card";
 import SearchBar from "../SearchBar";
+import { fetchTeamMember } from "../../Common/Config";
 
 const TeamComponent = () => {
   return (
@@ -28,10 +29,25 @@ const CardContainer = ({ filteredResult }) => {
 };
 
 const TeamBody = () => {
-  const [filteredResult, setFilteredResult] = useState(teamData);
+  const [data, setData] = useState([]);
+  const [filteredResult, setFilteredResult] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const teamData = await fetchTeamMember(Ids);
+    setData(teamData);
+    setFilteredResult(teamData);
+  };
+
   return (
     <>
-      <SearchBar setFilteredResult={setFilteredResult}></SearchBar>
+      <SearchBar
+        setFilteredResult={setFilteredResult}
+        teamData={data}
+      ></SearchBar>
       <div className="card-container">
         <CardContainer filteredResult={filteredResult} />
       </div>
